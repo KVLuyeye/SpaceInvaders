@@ -1,0 +1,34 @@
+package project.model.shot;
+
+import project.view.Sprite;
+import project.model.Direction;
+import project.util.Point;
+
+import java.awt.*;
+
+public abstract class Shot extends Sprite {
+
+    private final Direction direction;
+    public final int damage;
+
+    //////////////////////////////////////////////////////////////////////
+    // CONSTRUCTOR
+    //////////////////////////////////////////////////////////////////////
+    Shot(Image img, Point pos, Direction direction, int damage) {
+        super(img, pos);
+        this.direction = direction;
+        this.damage = damage;
+    }
+
+    //////////////////////////////////////////////////////////////////////
+    // ABSTRACT
+    //////////////////////////////////////////////////////////////////////
+    abstract public void move();
+
+    //////////////////////////////////////////////////////////////////////
+    // GETTERS & SETTERS
+    //////////////////////////////////////////////////////////////////////
+    public Direction getDirection() {
+        return direction;
+    }
+}
